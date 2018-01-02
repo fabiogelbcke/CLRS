@@ -1,0 +1,61 @@
+#include <cstddef>
+#include <iostream>
+
+class Node {
+public:
+	int value;
+	Node *np;
+
+	Node(int n)
+		: np(nullptr),
+		  value(n)
+		{};
+};
+
+
+class DoublyLinkedList {
+public:
+	Node *head;
+
+	DoublyLinkedList():
+		head(nullptr)
+		{};
+
+	void insert(int n){
+		if (head == nullptr){
+			head = new Node(n);
+		}
+		else{
+			Node *prev;
+			Node *curr;
+			Node *tmp;
+			prev = nullptr;
+			curr = head;
+			while (curr->np ^ prev != nullptr){
+				tmp = curr;
+				curr = curr->np ^ prev;
+				prev = tmp;
+			}
+			newNode = Node(n);
+			curr->np = curr->np ^ newNode;
+			newNode->np = curr;
+		}
+	}
+
+	Node *search(int n){
+		if (head == nullptr){
+			return nullptr;
+		}
+		Node *prev;
+		Node *curr;
+		Node *tmp;
+		prev = nullptr;
+		curr = head;
+		while (curr != nullptr && curr->value != n){
+			tmp = curr;
+			curr = curr->np ^ prev;
+			prev = tmp;
+		}
+		return curr;
+	}
+}
