@@ -1,3 +1,8 @@
+/***
+Implement a queue by a singly linked list L. The operations ENQUEUE
+and DEQUEUE should still take O(1) time.
+***/
+
 #include <cstddef>
 #include <iostream>
 #include <stdexcept>
@@ -62,7 +67,7 @@ public:
 			return value;
 		}
 		else{
-			throw std::logic_error("Empty queue");
+			throw std::runtime_error("Empty queue");
 		}
 	}
 };

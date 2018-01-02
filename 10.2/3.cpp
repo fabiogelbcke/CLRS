@@ -1,3 +1,8 @@
+/***
+Implement a stack using a singly linked list L. The operations PUSH
+and POP should still take O(1) time.
+***/
+
 #include <cstddef>
 #include <iostream>
 #include <stdexcept>
